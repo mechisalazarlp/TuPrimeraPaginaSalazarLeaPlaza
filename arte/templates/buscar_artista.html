@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Buscar Artista</h1>
+<form method="GET">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h2>Resultados:</h2>
+    <ul>
+        {% for artista in resultados %}
+            <li>{{ artista.nombre }} — {{ artista.nacionalidad }} — {{ artista.biografia }}</li>
+        {% endfor %}
+    </ul>
+{% elif request.GET.nombre %}
+    <p>No se encontraron artistas con ese nombre.</p>
+{% endif %}
+{% endblock %}

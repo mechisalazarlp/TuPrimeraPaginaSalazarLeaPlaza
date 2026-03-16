@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>🎨 Galería de Arte</h1>
+<p>Bienvenida a la galería. Usá el menú para navegar.</p>
+
+<ul>
+    <li><a href="{% url 'crear_artista' %}">Crear Artista</a></li>
+    <li><a href="{% url 'crear_obra' %}">Crear Obra</a></li>
+    <li><a href="{% url 'crear_movimiento' %}">Crear Movimiento Artístico</a></li>
+    <li><a href="{% url 'buscar_artista' %}">Buscar Artista</a></li>
+</ul>
+{% endblock %}
